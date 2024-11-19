@@ -1,18 +1,50 @@
 import { Button } from "antd";
-import React from "react";  
-const ButtonComponent = ({size,styleButton, styleTextButton , textbutton,disabled, ...rests}) => {  
-    return (  
-        <Button 
+import React, { useState } from "react";
+
+const ButtonComponent = ({
+  size,
+  styleButton,
+  styleTextButton,
+  textbutton,
+  disabled,
+  hoverStyleButton = {}, // kiểu khi hover
+  hoverStyleTextButton = {}, // kiểu text khi hover
+  ...rests
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Button
+      style={{
+        ...styleButton,
+        ...(isHovered && hoverStyleButton), // Áp dụng hover style
+        backgroundColor: disabled
+          ? "#ccc"
+          : isHovered
+          ? hoverStyleButton?.backgroundColor || styleButton?.backgroundColor
+          : styleButton?.backgroundColor,
+        border: disabled
+          ? "none"
+          : isHovered
+          ? hoverStyleButton?.border || styleButton?.border
+          : styleButton?.border,
+      }}
+      size={size}
+      disabled={disabled}
+      onMouseEnter={() => setIsHovered(true)} // Bật trạng thái hover
+      onMouseLeave={() => setIsHovered(false)} // Tắt trạng thái hover
+      {...rests}
+    >
+      <span
         style={{
-            ...styleButton,
-            backgroundColor: disabled ? '#ccc' : styleButton?.backgroundColor
+          ...styleTextButton,
+          ...(isHovered && hoverStyleTextButton), // Áp dụng hover style cho text
         }}
-        size={size} 
-        {...rests}
-        >
-        <span style={styleTextButton}>{textbutton}</span>
-        </Button>
-    )  
-}
+      >
+        {textbutton}
+      </span>
+    </Button>
+  );
+};
 
 export default ButtonComponent;

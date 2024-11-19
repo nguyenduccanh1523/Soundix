@@ -17,6 +17,11 @@ export const WrapperTextHeader = styled.span`
     text-align: left;
 `
 
+export const WrapperHeaderSign = styled.div`
+    display: flex;
+    gap: 16px;
+`
+
 export const WrapperHeaderAccount = styled.div`
     display: flex;
     justify-content: flex-end;
