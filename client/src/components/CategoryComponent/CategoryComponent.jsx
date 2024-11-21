@@ -29,7 +29,7 @@ const CategoryComponent = () => {
     <div
       style={{
         width: "100%",
-        background: "rgb(32, 178, 170)",
+        background: "white",
         display: "flex",
         justifyContent: "center",
       }}

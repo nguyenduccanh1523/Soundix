@@ -2,7 +2,7 @@ import { Row, Menu } from 'antd';
 import styled from 'styled-components';
 
 export const WrapperHeader = styled(Row)`
-    background-color: rgb(32, 178, 170);
+    background-color: rgb(255, 255, 255);
     align-items: center;
     gap: 16px;
     flex-wrap: nowrap;
@@ -12,14 +12,16 @@ export const WrapperHeader = styled(Row)`
     `
 
 export const WrapperTextHeader = styled.p`
-    color: black;
+    color: ${(props) => (props.isClicked ? 'rgb(32, 178, 170)' : 'black')};
     font-size: 15px;
     font-weight: bold; 
     cursor: pointer;
-    background-color: ${(props) => (props.isClicked ? 'white' : 'rgb(32, 178, 170)')};
+    //background-color: ${(props) => (props.isClicked ? 'white' : 'rgb(32, 178, 170)')};
+    border-bottom: ${(props) => (props.isClicked ? '3px solid rgb(32, 178, 170)' : 'none')};
     padding: 12px;
     &:hover {
-    background-color: white;
-  }
+      border-bottom: 3px solid rgb(32, 178, 170);
+      color: rgb(32, 178, 170);
+    }
 `
 

@@ -8,7 +8,7 @@ import {
   WrapperTextHeaderSmall,
 } from "./style";
 
-import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { UserOutlined, ShoppingCartOutlined, LoginOutlined } from "@ant-design/icons";
 import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
@@ -56,8 +56,8 @@ const HeaderComponent = () => {
                   styleTextButton={{ color: "white" }}
                   hoverStyleTextButton={{ color: "white" }}
                   size="large"
-                  icon={<UserOutlined />}
-                  textbutton="Sign in"
+                  icon=<LoginOutlined />
+                  textbutton="Login"
                 />
               </WrapperTextHeaderSmall>
               <WrapperTextHeaderSmall>
@@ -75,7 +75,7 @@ const HeaderComponent = () => {
                   hoverStyleTextButton={{ color: "white" }}
                   size="large"
                   icon={<UserOutlined />}
-                  textbutton="Sign up"
+                  textbutton="Register"
                 />
               </WrapperTextHeaderSmall>
             </WrapperHeaderSign>
