@@ -2,7 +2,7 @@ import { Row } from 'antd';
 import styled from 'styled-components';
 
 export const WrapperHeader = styled(Row)`
-    background-color: rgb(138, 43, 226);
+    background-color: #F9F6F6;
     padding: 10px 0px;
     align-items: center;
     gap: 16px;
@@ -15,6 +15,15 @@ export const WrapperTextHeader = styled.span`
     font-size: 18px;
     font-weight: bold;
     text-align: left;
+    color: rgb(32, 178, 170);
+`
+
+export const WrapperHeaderImage = styled.img`
+    width: 200px;
+    height: 55px;
+    object-fit: contain;
+
+    border-radius: 5%;
 `
 
 export const WrapperHeaderSign = styled.div`

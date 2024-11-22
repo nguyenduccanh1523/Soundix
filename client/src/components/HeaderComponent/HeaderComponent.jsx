@@ -3,11 +3,12 @@ import { Badge, Col } from "antd";
 import {
   WrapperHeader,
   WrapperHeaderAccount,
+  WrapperHeaderImage,
   WrapperHeaderSign,
   WrapperTextHeader,
   WrapperTextHeaderSmall,
 } from "./style";
-
+import home from "../../assets/images/home.png";
 import { UserOutlined, ShoppingCartOutlined, LoginOutlined } from "@ant-design/icons";
 import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
@@ -17,7 +18,7 @@ const HeaderComponent = () => {
     <div
       style={{
         width: "100%",
-        background: "rgb(138, 43, 226)",
+        background: "#F9F6F6",
         display: "flex",
         justifyContent: "center",
       }}
@@ -25,7 +26,7 @@ const HeaderComponent = () => {
       <WrapperHeader>
         <Col span={4}>
           <WrapperTextHeader style={{ cursor: "pointer" }}>
-            TeleWeb
+            <WrapperHeaderImage src={home}></WrapperHeaderImage>
           </WrapperTextHeader>
         </Col>
         <Col span={12}>
@@ -45,12 +46,12 @@ const HeaderComponent = () => {
               <WrapperTextHeaderSmall>
               <ButtonComponent
                   styleButton={{
-                    backgroundColor: "rgb(238, 118, 0)",
+                    backgroundColor: "rgb(32, 178, 170)",
                     border: "none",
                     color: "white",
                   }}
                   hoverStyleButton={{
-                    backgroundColor: "#84495F",
+                    backgroundColor: "#1C978F",
                     border: "none",
                   }}
                   styleTextButton={{ color: "white" }}
@@ -63,12 +64,12 @@ const HeaderComponent = () => {
               <WrapperTextHeaderSmall>
                 <ButtonComponent
                   styleButton={{
-                    backgroundColor: "rgb(238, 118, 0)",
+                    backgroundColor: "rgb(32, 178, 170)",
                     border: "none",
                     color: "white",
                   }}
                   hoverStyleButton={{
-                    backgroundColor: "#84495F",
+                    backgroundColor: "#1C978F",
                     border: "none",
                   }}
                   styleTextButton={{ color: "white" }}
@@ -83,11 +84,11 @@ const HeaderComponent = () => {
           <div style={{ cursor: "pointer", display: "flex" }}>
             <Badge size="small">
               <ShoppingCartOutlined
-                style={{ fontSize: "30px", color: "white" }}
+                style={{ fontSize: "30px", color: "#363636" }}
               />
             </Badge>
             <WrapperTextHeaderSmall
-              style={{ fontSize: "20px", color: "white" }}
+              style={{ fontSize: "20px", color: "#363636" }}
             >
               Cart
             </WrapperTextHeaderSmall>
