@@ -20,7 +20,7 @@ export const WrapperTextHeader = styled.p`
     border-bottom: ${(props) => (props.isClicked ? '3px solid rgb(32, 178, 170)' : 'none')};
     padding: 12px;
     &:hover {
-      border-bottom: 3px solid rgb(32, 178, 170);
+      //border-bottom: 3px solid rgb(32, 178, 170);
       color: rgb(32, 178, 170);
     }
 `
