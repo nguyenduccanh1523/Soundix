@@ -1,30 +1,38 @@
 import { Col, Image, Rate, Row } from "antd";
 import React, { useState } from "react";
+import StarRatings from "react-star-ratings";
 import imageProductSmall from "../../assets/images/JBL.webp";
-import {
-  PlusOutlined,
-  MinusOutlined,
-  HeartFilled,
-  HeartOutlined,
-} from "@ant-design/icons";
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
 import {
   WrapperAddressProduct,
-  WrapperInputNumber,
+  WrapperDetailShipping,
+  WrapperDiscountTextProduct,
   WrapperPriceProduct,
   WrapperPriceTextProduct,
-  WrapperQualityProduct,
+  WrapperSelectColorProduct,
   WrapperStyleColImage,
   WrapperStyleImageSmall,
   WrapperStyleNameProduct,
   WrapperStyleTextSell,
 } from "./style";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import ButtonColorComponent from "../ButtonColorComponent/ButtonColorComponent";
+import ButtonDetailShippingPaymentComponent from "../ButtonDetailShippingPaymentComponent/ButtonDetailShippingPaymentComponent";
 import { convertPrice } from "../../utils";
 import image from "../../assets/images/JBL.webp";
 
 const ProductDetailComponent = () => {
   const [isFilled, setIsFilled] = useState(false); // Trạng thái lưu trữ xem nút có được filled hay không
 
+  // Lưu trạng thái của button đã được chọn
+  const [selectedColor, setSelectedColor] = useState(null);
+
+  const handleColorSelect = (colorCode, colorName) => {
+    // Cập nhật trạng thái của màu đã chọn
+    setSelectedColor(colorCode);
+    console.log(`Màu đã chọn: ${colorName} - Mã màu: ${colorCode}`);
+    // Bạn có thể thực hiện hành động với màu đã chọn (ví dụ: cập nhật sản phẩm)
+  };
   const handleClick = () => {
     setIsFilled(!isFilled); // Đổi trạng thái khi nhấn nút
   };
@@ -50,7 +58,7 @@ const ProductDetailComponent = () => {
             <WrapperStyleImageSmall
               src={imageProductSmall}
               alt="image small"
-              preview={false}
+              preview={true}
             />
           </WrapperStyleColImage>
           <WrapperStyleColImage span={4}>
@@ -95,11 +103,12 @@ const ProductDetailComponent = () => {
           Tai nghe Bluetooth JBL Tune 500BT - Hàng Chính Hãng
         </WrapperStyleNameProduct>
         <div>
-          <Rate
-            allowHalf
-            defaultValue={4.5}
-            value={4.5}
-            style={{ color: "#EEEE00" }} // Màu vàng
+          <StarRatings
+            rating={4.5} // Giá trị sao
+            starRatedColor="#EEEE00" // Màu sao
+            numberOfStars={5} // Tổng số sao
+            starDimension="25px" // Kích thước sao
+            starSpacing="2px" // Khoảng cách giữa các sao
           />
           <WrapperStyleTextSell> | 2000+ Reviewer</WrapperStyleTextSell>
         </div>
@@ -107,49 +116,41 @@ const ProductDetailComponent = () => {
           <WrapperPriceTextProduct>
             {convertPrice(1000000)}
           </WrapperPriceTextProduct>
+          <WrapperDiscountTextProduct>10% OFF</WrapperDiscountTextProduct>
         </WrapperPriceProduct>
+        <WrapperSelectColorProduct>
+          <span>Select Color:</span>
+          <ButtonColorComponent
+            colorCode="#FF5733"
+            colorName="Red Orange"
+            selected={selectedColor === "#FF5733"} // Kiểm tra màu đã chọn
+            onClick={handleColorSelect}
+          />
+          <ButtonColorComponent
+            colorCode="#33FF57"
+            colorName="Green"
+            selected={selectedColor === "#33FF57"} 
+            onClick={handleColorSelect}
+          />
+        </WrapperSelectColorProduct>
         <WrapperAddressProduct>
           <span>Delivered to</span>
           <span className="address"> sssssss</span> -
           <span className="change-address"> Change address</span>
         </WrapperAddressProduct>
+
+        <WrapperDetailShipping>
+            <ButtonDetailShippingPaymentComponent productName="" productDetails=""/>
+        </WrapperDetailShipping>
+
         <div
           style={{
-            margin: "10px 0 20px",
-            padding: "10px 0",
-            borderTop: "1px solid #e5e5e5",
-            borderBottom: "1px solid #e5e5e5",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            marginTop: "10px",
           }}
         >
-          <div style={{ marginBottom: "10px" }}>Quality</div>
-          <WrapperQualityProduct>
-            <button
-              style={{ border: "none", backgroundColor: "transparent" }}
-              //onClick={() => handleChangeCount("decrease", numProduct === 1)}
-            >
-              <MinusOutlined style={{ color: "#000", fontSize: "20px" }} />
-            </button>
-            <WrapperInputNumber
-              //onChange={onChange}
-              defaultValue={1}
-              //max={productDetails?.countInStock}
-              value={1}
-              size="small"
-            />
-            <button
-              style={{ border: "none", backgroundColor: "transparent" }}
-              // onClick={() =>
-              //   handleChangeCount(
-              //     "increase",
-              //     numProduct === productDetails?.countInStock
-              //   )
-              // }
-            >
-              <PlusOutlined style={{ color: "#000", fontSize: "20px" }} />
-            </button>
-          </WrapperQualityProduct>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <>
             <div>
               <ButtonComponent

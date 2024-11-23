@@ -26,18 +26,43 @@ export const WrapperPriceProduct = styled.div`
     border-radius: 4px;
     background-color: rgb(250,250,250);
     color: rgb(32, 178, 170);
+    display: flex;
+    height: 60px;
 `
 
 export const WrapperPriceTextProduct = styled.h1`
     font-size: 32px;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 40px;
     margin-right: 8px;
-    padding: 10px;
+    padding: 5px;
     margin-top: 10px;
+`
+export const WrapperDiscountTextProduct = styled.span`
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-right: 8px;
+    padding: 0px 5px 0px 5px;
+    margin-top: 25px;
+    margin-bottom: 17px;
+    background-color: #FF3030;
+    color: white;
+    border-radius: 4px;
+`
+
+export const WrapperSelectColorProduct = styled.div`
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 800;
 `
 
 export const WrapperAddressProduct = styled.div`
+    margin-top: 10px;
+    margin-bottom: 10px;
     span.address{
         font-size: 20px;
         line-height: 24px;
@@ -52,6 +77,15 @@ export const WrapperAddressProduct = styled.div`
         line-height: 24px;
         font-weight: 500;
     }
+`
+
+export const WrapperDetailShipping = styled.div`
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0px 10px 0px;
 `
 
 export const WrapperQualityProduct = styled.div`
