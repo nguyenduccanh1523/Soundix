@@ -1,7 +1,7 @@
 export const convertPrice = (price) => {
     try {
         const result = Math.floor(price)?.toLocaleString().replaceAll(',', '.');
-        return `$ ${result}`;
+        return `$${result}`;
     }
     catch (error) {
         return null;

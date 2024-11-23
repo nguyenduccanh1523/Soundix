@@ -38,7 +38,7 @@ const CardComponent = (props) => {
         </span>
         <WrapperStyleTextSell> | Selled {selled || 1000}+</WrapperStyleTextSell>
       </WrapperReportText>
-      <WrapperPriceText><span style={{marginRight: '8px'}}>33.22</span> <WrapperDiscountText> - {discount || 0}%</WrapperDiscountText></WrapperPriceText>
+      <WrapperPriceText><span style={{marginRight: '8px'}}>{convertPrice(3223)}</span> <WrapperDiscountText> - {discount || 0}%</WrapperDiscountText></WrapperPriceText>
     </WrapperCardStyle>
   );
 };
