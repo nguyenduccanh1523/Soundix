@@ -112,6 +112,7 @@ const FooterComponent = () => {
                 backgroundColor: "#1C978F",
                 border: "none",
               }}
+              styleTextButton={{ fontWeight: "9000" }}
               textbutton={ <SendOutlined /> }
             />
           </Col>

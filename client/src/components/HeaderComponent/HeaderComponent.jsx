@@ -9,7 +9,7 @@ import {
   WrapperTextHeaderSmall,
 } from "./style";
 import home from "../../assets/images/home.png";
-import { UserOutlined, ShoppingCartOutlined, LoginOutlined } from "@ant-design/icons";
+import { UserOutlined, ShoppingCartOutlined, LoginOutlined, HeartOutlined } from "@ant-design/icons";
 import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
@@ -81,17 +81,18 @@ const HeaderComponent = () => {
               </WrapperTextHeaderSmall>
             </WrapperHeaderSign>
           </WrapperHeaderAccount>
+          
           <div style={{ cursor: "pointer", display: "flex" }}>
             <Badge size="small">
-              <ShoppingCartOutlined
-                style={{ fontSize: "30px", color: "#363636" }}
+              <HeartOutlined
+                style={{ fontSize: "25px", color: "#363636", marginRight: "20px" }}
               />
             </Badge>
-            <WrapperTextHeaderSmall
-              style={{ fontSize: "20px", color: "#363636" }}
-            >
-              Cart
-            </WrapperTextHeaderSmall>
+            <Badge size="small">
+              <ShoppingCartOutlined
+                style={{ fontSize: "25px", color: "#363636" }}
+              />
+            </Badge>
           </div>
         </Col>
       </WrapperHeader>
