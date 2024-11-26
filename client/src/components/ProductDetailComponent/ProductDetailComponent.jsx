@@ -20,6 +20,7 @@ import ButtonColorComponent from "../ButtonColorComponent/ButtonColorComponent";
 import ButtonDetailShippingPaymentComponent from "../ButtonDetailShippingPaymentComponent/ButtonDetailShippingPaymentComponent";
 import { convertPrice } from "../../utils";
 import image from "../../assets/images/JBL.webp";
+import ButtonProductDetailsComponent from "../ButtonProductDetailsComponent/ButtonProductDetailsComponent";
 
 const ProductDetailComponent = () => {
   const [isFilled, setIsFilled] = useState(false); // Trạng thái lưu trữ xem nút có được filled hay không
@@ -37,6 +38,7 @@ const ProductDetailComponent = () => {
     setIsFilled(!isFilled); // Đổi trạng thái khi nhấn nút
   };
   return (
+    <>
     <Row
       style={{
         padding: "16px",
@@ -140,6 +142,10 @@ const ProductDetailComponent = () => {
         </WrapperAddressProduct>
 
         <WrapperDetailShipping>
+            <ButtonProductDetailsComponent productDetails="cáddasad" />
+        </WrapperDetailShipping>
+
+        <WrapperDetailShipping>
             <ButtonDetailShippingPaymentComponent productName="" productDetails=""/>
         </WrapperDetailShipping>
 
@@ -214,6 +220,7 @@ const ProductDetailComponent = () => {
         </div>
       </Col>
     </Row>
+    </>
   );
 };
 

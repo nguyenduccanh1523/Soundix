@@ -12,7 +12,7 @@ export const WrapperFooter = styled(Row)`
 
 export const WrapperTextFooter = styled.span`
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     text-align: left;
     color: black;
@@ -23,7 +23,7 @@ export const WrapperTextFooter = styled.span`
 
 export const WrapperTextLocation = styled.span`
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     text-align: left;
     color: grey;
@@ -31,7 +31,7 @@ export const WrapperTextLocation = styled.span`
 
 export const WrapperLocation = styled.span`
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     padding-left: 24px;
     font-weight: 300;
     text-align: left;
@@ -41,7 +41,7 @@ export const WrapperLocation = styled.span`
 export const WrapperTextFooterIcon = styled.span`
     color: black;
     font-size: 25px;
-    border: 1px solid black;
+    //border: 1px solid black;
     padding: 8px;
     border-radius: 46%;
     white-space: nowrap;
@@ -50,7 +50,7 @@ export const WrapperTextFooterIcon = styled.span`
 
 export const WrapperCopy = styled.span`
     color: black;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 900;
     text-align: center;
     color: black;

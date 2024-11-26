@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { DownOutlined, UpOutlined, CheckOutlined  } from "@ant-design/icons";
-import paymentMethod from "../../assets/images/paymentMethod.jpg";
-const ButtonDetailShippingPaymentComponent = ({
+const ButtonProductDetailsComponent = ({
   productName,
   productDetails,
 }) => {
@@ -19,7 +18,7 @@ const ButtonDetailShippingPaymentComponent = ({
         onClick={toggleDetails}
         style={{
           color: "black",
-          padding: "10px",
+          padding: "10px 0px 10px 0px",
           width: "100%",
           fontWeight: "900",
           border: "0px",
@@ -28,7 +27,7 @@ const ButtonDetailShippingPaymentComponent = ({
         }}
       >
         <span style={{ textAlign: "left" }}>
-          SHIPPING AND PAYMENT {productName}
+          PRODUCT DETAILS {productName}
         </span>
         {/* Tùy thuộc vào trạng thái isOpen, thay đổi icon */}
         <span style={{ paddingLeft: "10px" }}>
@@ -44,7 +43,6 @@ const ButtonDetailShippingPaymentComponent = ({
           <h4>Payment</h4>
           <p><CheckOutlined style={{color: '#1C978F', fontSize: '20px'}} /> We accept all major forms of payment types including credit/debit card
           and PayPal.</p>
-          <img src={paymentMethod} alt="payment method" style={{width: '100%'}} />
           <p>{productDetails}</p>
         </div>
       )}
@@ -52,4 +50,4 @@ const ButtonDetailShippingPaymentComponent = ({
   );
 };
 
-export default ButtonDetailShippingPaymentComponent;
+export default ButtonProductDetailsComponent;
