@@ -16,9 +16,26 @@ import {
   MailOutlined,
   LockOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+
+  const handleOnchangeEmail = (value) => {
+    setEmail(value)
+  }
+
+  const handleOnchangePassword = (value) => {
+    setPassword(value)
+  }
+
+  const handleNavigateSignUp = () => {
+    navigate("/sign-up");
+  };
   return (
     <WrapperSignInPage>
       <WrapperContainer>
@@ -28,13 +45,13 @@ const SignInPage = () => {
           <InputForm
             style={{ marginBottom: "10px" }}
             placeholder="Email"
-            //value={email}
-            //onChange={handleOnchangeEmail}
+            value={email}
+            onChange={handleOnchangeEmail}
             icon={<MailOutlined />}
           />
           <div style={{ position: "relative" }}>
             <span
-              // onClick={() => setIsShowPassword(!isShowPassword)}
+              onClick={() => setIsShowPassword(!isShowPassword)}
               style={{
                 zIndex: 10,
                 position: "absolute",
@@ -48,15 +65,15 @@ const SignInPage = () => {
             <InputForm
               placeholder="Password"
               type={isShowPassword ? "text" : "password"}
-              //value={password}
-              //onChange={handleOnchangePassword}
+              value={password}
+              onChange={handleOnchangePassword}
               icon={<LockOutlined />}
             />
           </div>
           {/* {data?.status === 'ERR' && <span style={{color: 'red', fontSize: '15px'}}>{data?.message}</span>} */}
 
           <ButtonComponent
-            //disabled={!email.length || !password.length}
+            disabled={!email.length || !password.length}
             //onClick={handldeSignIn}
             size={40}
             styleButton={{
@@ -64,7 +81,7 @@ const SignInPage = () => {
               height: "48px",
               width: "100%",
               border: "none",
-              borderRadius: "4px",
+              borderRadius: "44px",
               margin: "26px 0 10px",
             }}
             hoverStyleButton={{
@@ -83,7 +100,7 @@ const SignInPage = () => {
           </p>
           <p>
             <span style={{ color: "#696969", fontSize: "14px" }}>Don't have an account? </span>
-            <WrapperTextLight>Create an account</WrapperTextLight>
+            <WrapperTextLight onClick={handleNavigateSignUp}>Create an account</WrapperTextLight>
           </p>
         </WrapperContainerLeft>
         <WrapperContainerRight>
